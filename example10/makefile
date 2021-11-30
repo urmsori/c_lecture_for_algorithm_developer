@@ -1,10 +1,10 @@
 all: a.out
 
-a.out: driver.o test.o
-	g++ -o a.out driver.o test.o
+a.out: driver.o unittest.o
+	g++ -o a.out driver.o unittest.o
 
-test.o: test.cpp
-	g++ -c -o test.o test.cpp -I .
+unittest.o: unittest.cpp
+	g++ -c -o unittest.o unittest.cpp -I .
 
 driver.o: driver.c driver.h
 	gcc -c -o driver.o driver.c -I .
