@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "linkprom": "linkerscript",
+        "*.cmake": "cmake",
+        "*.lark": "lark",
+        "stdint.h": "c"
+    }
+}
