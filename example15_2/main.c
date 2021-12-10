@@ -7,6 +7,7 @@ int main() {
   printf("&a\t%p\n", &a);
   printf("a+1\t%p\n", a + 1);
   printf("&a+1\t%p\n", &a + 1);
+  printf("sizeof(a[0])\t0x%lx\n", sizeof(a[0]));
   printf("sizeof(a)\t0x%lx\n", sizeof(a));
 
   return 0;
