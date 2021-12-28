@@ -12,24 +12,29 @@ int main(void) {
   printf("%f\n", f_ptr[1]);
 
   // Using Struct
-  struct {
+  struct struct_convert{
     float f1;
     float f2;
-  } struct_convert;
-  memcpy(&struct_convert, raw, 8);
+  };
+  struct struct_convert* sc = (struct struct_convert*) raw;
 
-  printf("%f\n", struct_convert.f1);
-  printf("%f\n", struct_convert.f2);
+  printf("%f\n", sc->f1);
+  printf("%f\n", sc->f2);
 
   // Using Union
-  union {
+  union union_convert{
     uint8_t m8array[8];
     float farray[2];
-  } union_convert;
-  memcpy(union_convert.m8array, raw, 8);
+  };
+  union union_convert* uc = (union union_convert*) raw;
 
-  printf("%f\n", union_convert.farray[0]);
-  printf("%f\n", union_convert.farray[1]);
+  printf("%f\n", uc->farray[0]);
+  printf("%f\n", uc->farray[1]);
+
+  // 주소값 비교
+  printf("%p\n", raw);
+  printf("%p\n", uc->m8array);
+  printf("%p\n", uc->farray);
 
   return 0;
 }
